@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PBL_SQL_V1ModelStoreContainer" CdmEntityContainer="PBL_SQL_V1Entities">
+    <EntitySetMapping Name="BANs">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.BAN">
+        <MappingFragment StoreEntitySet="BAN">
+          <ScalarProperty Name="Ma_Ban" ColumnName="Ma_Ban" />
+          <ScalarProperty Name="Ten_Ban" ColumnName="Ten_Ban" />
+          <ScalarProperty Name="Ma_Khu_Vuc" ColumnName="Ma_Khu_Vuc" />
+          <ScalarProperty Name="Tinh_Trang" ColumnName="Tinh_Trang" />
+          <ScalarProperty Name="Ma_Ban_Chuyen_Den" ColumnName="Ma_Ban_Chuyen_Den" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHI_TIET_HD_BAN_HANG">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.CHI_TIET_HD_BAN_HANG">
+        <MappingFragment StoreEntitySet="CHI_TIET_HD_BAN_HANG">
+          <ScalarProperty Name="Ma_CTHD" ColumnName="Ma_CTHD" />
+          <ScalarProperty Name="Ma_Hoa_Don" ColumnName="Ma_Hoa_Don" />
+          <ScalarProperty Name="Ma_Hang_Hoa" ColumnName="Ma_Hang_Hoa" />
+          <ScalarProperty Name="So_Luong" ColumnName="So_Luong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HANG_HOA">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.HANG_HOA">
+        <MappingFragment StoreEntitySet="HANG_HOA">
+          <ScalarProperty Name="Ma_Hang_Hoa" ColumnName="Ma_Hang_Hoa" />
+          <ScalarProperty Name="Ten_Hang_Hoa" ColumnName="Ten_Hang_Hoa" />
+          <ScalarProperty Name="Ma_Loai_Hang_Hoa" ColumnName="Ma_Loai_Hang_Hoa" />
+          <ScalarProperty Name="Gia_Hang_Hoa" ColumnName="Gia_Hang_Hoa" />
+          <ScalarProperty Name="Tinh_Trang" ColumnName="Tinh_Trang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOA_DON_BAN_HANG">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.HOA_DON_BAN_HANG">
+        <MappingFragment StoreEntitySet="HOA_DON_BAN_HANG">
+          <ScalarProperty Name="Ma_Hoa_Don" ColumnName="Ma_Hoa_Don" />
+          <ScalarProperty Name="Ma_Nhan_Vien" ColumnName="Ma_Nhan_Vien" />
+          <ScalarProperty Name="Ma_Ban" ColumnName="Ma_Ban" />
+          <ScalarProperty Name="Ma_Khach_Hang" ColumnName="Ma_Khach_Hang" />
+          <ScalarProperty Name="Date_HDBH" ColumnName="Date_HDBH" />
+          <ScalarProperty Name="Tong_Tien" ColumnName="Tong_Tien" />
+          <ScalarProperty Name="Diem_Tich_Luy" ColumnName="Diem_Tich_Luy" />
+          <ScalarProperty Name="Giam_Gia" ColumnName="Giam_Gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACH_HANG">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.KHACH_HANG">
+        <MappingFragment StoreEntitySet="KHACH_HANG">
+          <ScalarProperty Name="Ma_Khach_Hang" ColumnName="Ma_Khach_Hang" />
+          <ScalarProperty Name="Ma_Loai_Khach_Hang" ColumnName="Ma_Loai_Khach_Hang" />
+          <ScalarProperty Name="Ten_Khach_Hang" ColumnName="Ten_Khach_Hang" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Diem_Tich_Luy" ColumnName="Diem_Tich_Luy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHU_VUC">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.KHU_VUC">
+        <MappingFragment StoreEntitySet="KHU_VUC">
+          <ScalarProperty Name="Ma_Khu_Vuc" ColumnName="Ma_Khu_Vuc" />
+          <ScalarProperty Name="Ten_Khu_Vuc" ColumnName="Ten_Khu_Vuc" />
+          <ScalarProperty Name="Trang_Thai" ColumnName="Trang_Thai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAI_HANG_HOA">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.LOAI_HANG_HOA">
+        <MappingFragment StoreEntitySet="LOAI_HANG_HOA">
+          <ScalarProperty Name="Ma_Loai_Hang_Hoa" ColumnName="Ma_Loai_Hang_Hoa" />
+          <ScalarProperty Name="Ten_Loai_Hang_Hoa" ColumnName="Ten_Loai_Hang_Hoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAI_KHACH_HANG">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.LOAI_KHACH_HANG">
+        <MappingFragment StoreEntitySet="LOAI_KHACH_HANG">
+          <ScalarProperty Name="Ma_Loai_Khach_Hang" ColumnName="Ma_Loai_Khach_Hang" />
+          <ScalarProperty Name="Ten_Loai_Khach_Hang" ColumnName="Ten_Loai_Khach_Hang" />
+          <ScalarProperty Name="Giam_gia" ColumnName="Giam_gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHAN_VIEN">
+      <EntityTypeMapping TypeName="PBL_SQL_V1Model.NHAN_VIEN">
+        <MappingFragment StoreEntitySet="NHAN_VIEN">
+          <ScalarProperty Name="Ma_Nhan_Vien" ColumnName="Ma_Nhan_Vien" />
+          <ScalarProperty Name="Ten_Nhan_Vien" ColumnName="Ten_Nhan_Vien" />
+          <ScalarProperty Name="Gioi_Tinh" ColumnName="Gioi_Tinh" />
+          <ScalarProperty Name="Chuc_Vu" ColumnName="Chuc_Vu" />
+          <ScalarProperty Name="Phan_Quyen" ColumnName="Phan_Quyen" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Mat_Khau" ColumnName="Mat_Khau" />
+          <ScalarProperty Name="Tinh_Trang" ColumnName="Tinh_Trang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PBL_SQL_V1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BAN">
+    <Key>
+      <PropertyRef Name="Ma_Ban" />
+    </Key>
+    <Property Name="Ma_Ban" Type="int" Nullable="false" />
+    <Property Name="Ten_Ban" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ma_Khu_Vuc" Type="int" />
+    <Property Name="Tinh_Trang" Type="bit" />
+    <Property Name="Ma_Ban_Chuyen_Den" Type="int" />
+  </EntityType>
+  <EntityType Name="CHI_TIET_HD_BAN_HANG">
+    <Key>
+      <PropertyRef Name="Ma_CTHD" />
+    </Key>
+    <Property Name="Ma_CTHD" Type="int" Nullable="false" />
+    <Property Name="Ma_Hoa_Don" Type="int" Nullable="false" />
+    <Property Name="Ma_Hang_Hoa" Type="int" Nullable="false" />
+    <Property Name="So_Luong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HANG_HOA">
+    <Key>
+      <PropertyRef Name="Ma_Hang_Hoa" />
+    </Key>
+    <Property Name="Ma_Hang_Hoa" Type="int" Nullable="false" />
+    <Property Name="Ten_Hang_Hoa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ma_Loai_Hang_Hoa" Type="int" Nullable="false" />
+    <Property Name="Gia_Hang_Hoa" Type="int" Nullable="false" />
+    <Property Name="Tinh_Trang" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HOA_DON_BAN_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Hoa_Don" />
+    </Key>
+    <Property Name="Ma_Hoa_Don" Type="int" Nullable="false" />
+    <Property Name="Ma_Nhan_Vien" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ma_Ban" Type="int" Nullable="false" />
+    <Property Name="Ma_Khach_Hang" Type="int" />
+    <Property Name="Date_HDBH" Type="datetime" Nullable="false" />
+    <Property Name="Tong_Tien" Type="int" Nullable="false" />
+    <Property Name="Diem_Tich_Luy" Type="int" />
+    <Property Name="Giam_Gia" Type="int" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Khach_Hang" />
+    </Key>
+    <Property Name="Ma_Khach_Hang" Type="int" Nullable="false" />
+    <Property Name="Ma_Loai_Khach_Hang" Type="int" Nullable="false" />
+    <Property Name="Ten_Khach_Hang" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Diem_Tich_Luy" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHU_VUC">
+    <Key>
+      <PropertyRef Name="Ma_Khu_Vuc" />
+    </Key>
+    <Property Name="Ma_Khu_Vuc" Type="int" Nullable="false" />
+    <Property Name="Ten_Khu_Vuc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Trang_Thai" Type="nvarchar" MaxLength="70" />
+  </EntityType>
+  <EntityType Name="LOAI_HANG_HOA">
+    <Key>
+      <PropertyRef Name="Ma_Loai_Hang_Hoa" />
+    </Key>
+    <Property Name="Ma_Loai_Hang_Hoa" Type="int" Nullable="false" />
+    <Property Name="Ten_Loai_Hang_Hoa" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOAI_KHACH_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Loai_Khach_Hang" />
+    </Key>
+    <Property Name="Ma_Loai_Khach_Hang" Type="int" Nullable="false" />
+    <Property Name="Ten_Loai_Khach_Hang" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Giam_gia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="Ma_Nhan_Vien" />
+    </Key>
+    <Property Name="Ma_Nhan_Vien" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ten_Nhan_Vien" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Gioi_Tinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Chuc_Vu" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Phan_Quyen" Type="bit" Nullable="false" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Mat_Khau" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tinh_Trang" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_hdbh_Ma_Ban">
+    <End Role="BAN" Type="Self.BAN" Multiplicity="1" />
+    <End Role="HOA_DON_BAN_HANG" Type="Self.HOA_DON_BAN_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BAN">
+        <PropertyRef Name="Ma_Ban" />
+      </Principal>
+      <Dependent Role="HOA_DON_BAN_HANG">
+        <PropertyRef Name="Ma_Ban" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hdbh_Ma_Hang_Hoa">
+    <End Role="HANG_HOA" Type="Self.HANG_HOA" Multiplicity="1" />
+    <End Role="CHI_TIET_HD_BAN_HANG" Type="Self.CHI_TIET_HD_BAN_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HANG_HOA">
+        <PropertyRef Name="Ma_Hang_Hoa" />
+      </Principal>
+      <Dependent Role="CHI_TIET_HD_BAN_HANG">
+        <PropertyRef Name="Ma_Hang_Hoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hdbh_Ma_Khach_Hang">
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="0..1" />
+    <End Role="HOA_DON_BAN_HANG" Type="Self.HOA_DON_BAN_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_HANG">
+        <PropertyRef Name="Ma_Khach_Hang" />
+      </Principal>
+      <Dependent Role="HOA_DON_BAN_HANG">
+        <PropertyRef Name="Ma_Khach_Hang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hdbh_Ma_Ma_Hoa_Don">
+    <End Role="HOA_DON_BAN_HANG" Type="Self.HOA_DON_BAN_HANG" Multiplicity="1" />
+    <End Role="CHI_TIET_HD_BAN_HANG" Type="Self.CHI_TIET_HD_BAN_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOA_DON_BAN_HANG">
+        <PropertyRef Name="Ma_Hoa_Don" />
+      </Principal>
+      <Dependent Role="CHI_TIET_HD_BAN_HANG">
+        <PropertyRef Name="Ma_Hoa_Don" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hdbh_Ma_Nhan_Vien">
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+    <End Role="HOA_DON_BAN_HANG" Type="Self.HOA_DON_BAN_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="Ma_Nhan_Vien" />
+      </Principal>
+      <Dependent Role="HOA_DON_BAN_HANG">
+        <PropertyRef Name="Ma_Nhan_Vien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_htk_Ma_Khu_Vuc">
+    <End Role="KHU_VUC" Type="Self.KHU_VUC" Multiplicity="0..1" />
+    <End Role="BAN" Type="Self.BAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHU_VUC">
+        <PropertyRef Name="Ma_Khu_Vuc" />
+      </Principal>
+      <Dependent Role="BAN">
+        <PropertyRef Name="Ma_Khu_Vuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_htk_Ma_Loai_Hang_Hoa">
+    <End Role="LOAI_HANG_HOA" Type="Self.LOAI_HANG_HOA" Multiplicity="1" />
+    <End Role="HANG_HOA" Type="Self.HANG_HOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAI_HANG_HOA">
+        <PropertyRef Name="Ma_Loai_Hang_Hoa" />
+      </Principal>
+      <Dependent Role="HANG_HOA">
+        <PropertyRef Name="Ma_Loai_Hang_Hoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_htk_Ma_Loai_Khach_Hang">
+    <End Role="LOAI_KHACH_HANG" Type="Self.LOAI_KHACH_HANG" Multiplicity="1" />
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAI_KHACH_HANG">
+        <PropertyRef Name="Ma_Loai_Khach_Hang" />
+      </Principal>
+      <Dependent Role="KHACH_HANG">
+        <PropertyRef Name="Ma_Loai_Khach_Hang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PBL_SQL_V1ModelStoreContainer">
+    <EntitySet Name="BAN" EntityType="Self.BAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHI_TIET_HD_BAN_HANG" EntityType="Self.CHI_TIET_HD_BAN_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HANG_HOA" EntityType="Self.HANG_HOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOA_DON_BAN_HANG" EntityType="Self.HOA_DON_BAN_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHU_VUC" EntityType="Self.KHU_VUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAI_HANG_HOA" EntityType="Self.LOAI_HANG_HOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAI_KHACH_HANG" EntityType="Self.LOAI_KHACH_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_hdbh_Ma_Ban" Association="Self.fk_hdbh_Ma_Ban">
+      <End Role="BAN" EntitySet="BAN" />
+      <End Role="HOA_DON_BAN_HANG" EntitySet="HOA_DON_BAN_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hdbh_Ma_Hang_Hoa" Association="Self.fk_hdbh_Ma_Hang_Hoa">
+      <End Role="HANG_HOA" EntitySet="HANG_HOA" />
+      <End Role="CHI_TIET_HD_BAN_HANG" EntitySet="CHI_TIET_HD_BAN_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hdbh_Ma_Khach_Hang" Association="Self.fk_hdbh_Ma_Khach_Hang">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="HOA_DON_BAN_HANG" EntitySet="HOA_DON_BAN_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hdbh_Ma_Ma_Hoa_Don" Association="Self.fk_hdbh_Ma_Ma_Hoa_Don">
+      <End Role="HOA_DON_BAN_HANG" EntitySet="HOA_DON_BAN_HANG" />
+      <End Role="CHI_TIET_HD_BAN_HANG" EntitySet="CHI_TIET_HD_BAN_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hdbh_Ma_Nhan_Vien" Association="Self.fk_hdbh_Ma_Nhan_Vien">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="HOA_DON_BAN_HANG" EntitySet="HOA_DON_BAN_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="fk_htk_Ma_Khu_Vuc" Association="Self.fk_htk_Ma_Khu_Vuc">
+      <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+      <End Role="BAN" EntitySet="BAN" />
+    </AssociationSet>
+    <AssociationSet Name="fk_htk_Ma_Loai_Hang_Hoa" Association="Self.fk_htk_Ma_Loai_Hang_Hoa">
+      <End Role="LOAI_HANG_HOA" EntitySet="LOAI_HANG_HOA" />
+      <End Role="HANG_HOA" EntitySet="HANG_HOA" />
+    </AssociationSet>
+    <AssociationSet Name="fk_htk_Ma_Loai_Khach_Hang" Association="Self.fk_htk_Ma_Loai_Khach_Hang">
+      <End Role="LOAI_KHACH_HANG" EntitySet="LOAI_KHACH_HANG" />
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
