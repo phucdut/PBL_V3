@@ -1,6 +1,6 @@
 ﻿namespace PBL_V3.View_Form
 {
-    partial class FormTable
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // flpTable
+            // contextMenuStrip1
             // 
-            this.flpTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpTable.Location = new System.Drawing.Point(0, 0);
-            this.flpTable.Name = "flpTable";
-            this.flpTable.Size = new System.Drawing.Size(610, 554);
-            this.flpTable.TabIndex = 0;
-            this.flpTable.Paint += new System.Windows.Forms.PaintEventHandler(this.flpTable_Paint);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // FormTable
+            // flpMenu
+            // 
+            this.flpMenu.AllowDrop = true;
+            this.flpMenu.AutoScroll = true;
+            this.flpMenu.Location = new System.Drawing.Point(2, 1);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Size = new System.Drawing.Size(598, 580);
+            this.flpMenu.TabIndex = 1;
+            // 
+            // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 554);
-            this.Controls.Add(this.flpTable);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormTable";
-            this.Text = "FormTable";
+            this.ClientSize = new System.Drawing.Size(603, 581);
+            this.Controls.Add(this.flpMenu);
+            this.Name = "FormMenu";
+            this.Text = "FormMenu";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flpTable;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.FlowLayoutPanel flpMenu;
     }
 }

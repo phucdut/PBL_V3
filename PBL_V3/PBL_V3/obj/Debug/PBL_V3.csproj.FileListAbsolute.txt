@@ -27,3 +27,8 @@ F:\C#\PBL3_V3\PBL_V3\PBL_V3\bin\Debug\EntityFramework.SqlServer.dll
 F:\C#\PBL3_V3\PBL_V3\PBL_V3\bin\Debug\EntityFramework.xml
 F:\C#\PBL3_V3\PBL_V3\PBL_V3\bin\Debug\EntityFramework.SqlServer.xml
 F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.csproj.CopyComplete
+F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form.FormTable.resources
+F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form._1.resources
+F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form.DetailTable.resources
+F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form.FormMenu.resources
+F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form.TableTach.resources

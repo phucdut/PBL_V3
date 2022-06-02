@@ -73,6 +73,16 @@ namespace PBL_V3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _12111 {
+            get {
+                object obj = ResourceManager.GetObject("12111", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _12321 {
             get {
                 object obj = ResourceManager.GetObject("12321", resourceCulture);
@@ -263,6 +273,16 @@ namespace PBL_V3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap f737a03d3688997263a766a60f70dd6011 {
+            get {
+                object obj = ResourceManager.GetObject("f737a03d3688997263a766a60f70dd6011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hide {
             get {
                 object obj = ResourceManager.GetObject("hide", resourceCulture);
@@ -286,6 +306,16 @@ namespace PBL_V3.Properties {
         internal static System.Drawing.Bitmap Mau_icon_kinh_lup_de_thuong {
             get {
                 object obj = ResourceManager.GetObject("Mau-icon-kinh-lup-de-thuong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mau_icon_kinh_lup_de_thuong1 {
+            get {
+                object obj = ResourceManager.GetObject("Mau-icon-kinh-lup-de-thuong1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,6 +393,16 @@ namespace PBL_V3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ppp1 {
+            get {
+                object obj = ResourceManager.GetObject("ppp1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap proFile {
             get {
                 object obj = ResourceManager.GetObject("proFile", resourceCulture);
@@ -406,6 +446,16 @@ namespace PBL_V3.Properties {
         internal static System.Drawing.Bitmap profile_80px1 {
             get {
                 object obj = ResourceManager.GetObject("profile_80px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profile_80px2 {
+            get {
+                object obj = ResourceManager.GetObject("profile_80px2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -556,6 +606,16 @@ namespace PBL_V3.Properties {
         internal static System.Drawing.Bitmap thermos_50px {
             get {
                 object obj = ResourceManager.GetObject("thermos_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User {
+            get {
+                object obj = ResourceManager.GetObject("User", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
