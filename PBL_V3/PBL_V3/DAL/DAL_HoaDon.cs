@@ -45,10 +45,14 @@ namespace PBL_V3.DAL
         public List<HOA_DON_BAN_HANG> GetListByDate(DateTime checkIn)
         {
             List<HOA_DON_BAN_HANG> list = (from hoadon in db.HOA_DON_BAN_HANG
-                                           where hoadon.Date_HDBH >= checkIn 
+                                  where hoadon.Date_HDBH >= checkIn 
                                   select hoadon).ToList();
 
+
+
             return list;
+
+
 
         }
 
@@ -57,7 +61,7 @@ namespace PBL_V3.DAL
         public List<HOA_DON_BAN_HANG> GetList(int key)
         {
             List<HOA_DON_BAN_HANG> list = (from hoadon in db.HOA_DON_BAN_HANG
-                                           where hoadon.Ma_Ban == key && hoadon.Date_HDBH == null
+                                  where hoadon.Ma_Ban == key && hoadon.Date_HDBH == null
                                   select hoadon).ToList();
 
             return list;
@@ -65,7 +69,7 @@ namespace PBL_V3.DAL
 
 
 
-        public HOA_DON_BAN_HANG Get_HOA_DON_BAN_HANG(int id)
+        public HOA_DON_BAN_HANG Get_HOA_DON(int id)
         {
             HOA_DON_BAN_HANG hoadon = db.HOA_DON_BAN_HANG.First(p => p.Ma_Hoa_Don == id);
 
@@ -168,6 +172,8 @@ namespace PBL_V3.DAL
                        where p.Date_HDBH >= dMonth
                        select p.Tong_Tien;
             var sum = list.ToList().Sum();
+
+
 
             return Convert.ToDouble(sum);
         }

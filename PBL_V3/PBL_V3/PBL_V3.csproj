@@ -194,6 +194,12 @@
     <Compile Include="View_Form\Form_DoiMatKhau.Designer.cs">
       <DependentUpon>Form_DoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_Form\Form_HoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Form\Form_HoSo.Designer.cs">
+      <DependentUpon>Form_HoSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_Form\TableTach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View_Form\Form_DoiMatKhau.resx">
       <DependentUpon>Form_DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Form\Form_HoSo.resx">
+      <DependentUpon>Form_HoSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View_Form\TableTach.resx">
       <DependentUpon>TableTach.cs</DependentUpon>

@@ -25,6 +25,7 @@ namespace PBL_V3
         {
             InitializeComponent();
             user = username;
+            btnTable_Click(new object(), new EventArgs());
             SetGUI();
         }
         private Form activeForm = null;
@@ -132,37 +133,7 @@ namespace PBL_V3
             OpenChildForm(new FormMenu());
         }
 
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.Show("Bàn", btnTable);
-        }
-
-        //private void btnAdmin_Click(object sender, EventArgs e)
-        //{
-        //    NHAN_VIEN nv = BILLinfo.Instance.Staff_ID_BLL(user);
-        //    if (nv.Phan_Quyen == true)
-        //    {
-        //        if (panelAdmin.Visible == true)
-        //        {
-        //            panelAdmin.Hide();
-        //        }
-        //        else
-        //        {
-        //            panelAdmin.Show();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Không phải admin");
-        //    }
-        //}
-
-        //private void btnExit_Click(object sender, EventArgs e)
-        //{
-        //    this.Close();
-        //}
-
-        private void listBox1_MouseClick(object sender, MouseEventArgs e)
+        private void listLHH_MouseClick(object sender, MouseEventArgs e)
         {
             LOAI_HANG_HOA lhh = (LOAI_HANG_HOA)listBox1.SelectedItem;
             if (lhh == null)
@@ -188,7 +159,7 @@ namespace PBL_V3
             hangHoa = (HANG_HOA)lsvHH.SelectedItems[0].Tag;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void butThem_Click(object sender, EventArgs e)
         {
             if (hangHoa != null && ban != null)
             {
@@ -197,7 +168,7 @@ namespace PBL_V3
                     BLL_HoaDon.Instance.InsertHOADON(ban.Ma_Ban, null, user);
                     BLL_Ban.Instance.update(ban.Ma_Ban, false);
 
-                    button1_Click(new object(), new EventArgs());
+                    btnTable_Click(new object(), new EventArgs());
                 }
 
                 int idBill = BLL_HoaDon.Instance.GetIdByTable(ban.Ma_Ban);
@@ -272,7 +243,7 @@ namespace PBL_V3
                                 BLL_Ban.Instance.update(ban.Ma_Ban, true);
                                 BLL_HoaDon.Instance.delete(idBill);
                             }
-                            button1_Click(new object(), new EventArgs());
+                            btnTable_Click(new object(), new EventArgs());
 
                             break;
                         }
@@ -305,7 +276,7 @@ namespace PBL_V3
                             BLL_HoaDon.Instance.delete(idBill);
                         }
 
-                        button1_Click(new object(), new EventArgs());
+                        btnTable_Click(new object(), new EventArgs());
 
                         return;
                     }
@@ -342,7 +313,7 @@ namespace PBL_V3
         
 
 
-        private void btnThanhToan_Click_1(object sender, EventArgs e)
+        private void btnThanhToan_Click(object sender, EventArgs e)
         {
 
             if (ban != null && BLL.BLL_HoaDon.Instance.checkHoaDon(ban.Ma_Ban))
@@ -366,7 +337,7 @@ namespace PBL_V3
 
                 Form_Bill bill = new Form_Bill(BLL.BLL_HoaDon.Instance.GetIdByTable(ban.Ma_Ban), 1, txtPhoneCustomer.Text);
                 txtPhoneCustomer.Text = "";
-                button1_Click(new object(), new EventArgs());
+                btnTable_Click(new object(), new EventArgs());
 
                 bill.ShowDialog();
             }
@@ -376,7 +347,7 @@ namespace PBL_V3
             }
         }
 
-        private void btnTamThanhToan_Click_1(object sender, EventArgs e)
+        private void btnTamThanhToan_Click(object sender, EventArgs e)
         {
             if (ban != null && BLL.BLL_HoaDon.Instance.checkHoaDon(ban.Ma_Ban))
             {
@@ -397,7 +368,7 @@ namespace PBL_V3
                 DetailTable f2 = new DetailTable(BLL_HoaDon.Instance.GetIdByTable(ban.Ma_Ban), user);
 
                 f2.ShowDialog();
-                button1_Click(new object(), new EventArgs());
+                btnTable_Click(new object(), new EventArgs());
             }
             else
             {
@@ -411,7 +382,7 @@ namespace PBL_V3
             {
                 TableTach f2 = new TableTach(ban.Ma_Ban, null, user);
                 f2.ShowDialog();
-                button1_Click(new object(), new EventArgs());
+                btnTable_Click(new object(), new EventArgs());
             }
             else
             {
@@ -459,19 +430,46 @@ namespace PBL_V3
             NHAN_VIEN nv = BLL_NhanVien.Instance.Staff_ID_BLL(user);
             if (nv.Chuc_Vu == "Quản lý")
             {
-                if (panelQuanLy.Visible == true)
+                if (panelAdmin.Visible == true)
                 {
-                    panelQuanLy.Hide();
+                    panelAdmin.Hide();
                 }
                 else
                 {
-                    panelQuanLy.Show();
+                    panelAdmin.Show();
                 }
             }
             else
             {
                 MessageBox.Show("Không phải admin");
             }
+        }
+
+        private void btnTable_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Bàn", btnTable);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuanly_Click(object sender, EventArgs e)
+        {
+            FormAdmin f = new FormAdmin(user);
+            f.ShowDialog();
+        }
+
+        private void btnHoSo_Click(object sender, EventArgs e)
+        {
+            Form_HoSo f = new Form_HoSo(user);
+            f.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

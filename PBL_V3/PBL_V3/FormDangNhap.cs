@@ -45,22 +45,25 @@ namespace PBL_V3
                 string password = txtPass.Text;
                 if (BLL.BLL_TaiKhoan.Instance.BLL_DangNhap(username, password, 1))
                 {
-
-                    NHAN_VIEN nv = BLL.BLL_NhanVien.Instance.Staff_ID_BLL(username);
-                    if (nv.Chuc_Vu == "Quản lý")
-                    {
-                        FormAdmin f = new FormAdmin(BLL_NhanVien.Instance.getID_BLL(username));
-                        this.Hide();
-                        f.ShowDialog();
-                        this.Show();
-                    }
-                    if (nv.Chuc_Vu == "Nhân Viên")
-                    {
-                        FormBanHang td = new FormBanHang(BLL_NhanVien.Instance.getID_BLL(username));
-                        this.Hide();
-                        td.ShowDialog();
-                        this.Show();
-                    }
+                    FormBanHang td = new FormBanHang(BLL_NhanVien.Instance.getID_BLL(username));
+                    this.Hide();
+                    td.ShowDialog();
+                    this.Show();
+                    //NHAN_VIEN nv = BLL.BLL_NhanVien.Instance.Staff_ID_BLL(username);
+                    //if (nv.Chuc_Vu == "Quản lý")
+                    //{
+                    //    FormAdmin f = new FormAdmin(BLL_NhanVien.Instance.getID_BLL(username));
+                    //    this.Hide();
+                    //    f.ShowDialog();
+                    //    this.Show();
+                    //}
+                    //if (nv.Chuc_Vu == "Nhân Viên")
+                    //{
+                    //    FormBanHang td = new FormBanHang(BLL_NhanVien.Instance.getID_BLL(username));
+                    //    this.Hide();
+                    //    td.ShowDialog();
+                    //    this.Show();
+                    //}
                 }
                 else
                 {

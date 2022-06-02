@@ -9,6 +9,7 @@ namespace PBL_V3.BLL
 {
     class BLL_HoaDon
     {
+
         private static BLL_HoaDon _Instance;
         public static BLL_HoaDon Instance
         {
@@ -41,6 +42,7 @@ namespace PBL_V3.BLL
                 Ma_Khach_Hang = idKH,
                 Ma_Nhan_Vien = idNV,
                 Date_HDBH = DateTime.Now,
+                //Date_HDBH = null,
                 Tong_Tien = 0,
                 Giam_Gia = 0,
                 //  Diem_TL = 0
@@ -58,12 +60,12 @@ namespace PBL_V3.BLL
 
         public HOA_DON_BAN_HANG getHOADONbyID(int ID_HOADON)
         {
-            return DAL_HoaDon.Instance.Get_HOA_DON_BAN_HANG(ID_HOADON);
+            return DAL_HoaDon.Instance.Get_HOA_DON(ID_HOADON);
         }
 
         public void delete(int idBill)
         {
-            HOA_DON_BAN_HANG hoadon = DAL_HoaDon.Instance.Get_HOA_DON_BAN_HANG(idBill);
+            HOA_DON_BAN_HANG hoadon = DAL_HoaDon.Instance.Get_HOA_DON(idBill);
 
             DAL_HoaDon.Instance.Delete(hoadon);
             DAL_HoaDon.Instance.Sync();
@@ -105,9 +107,9 @@ namespace PBL_V3.BLL
             DAL_HoaDon.Instance.Sync();
         }
 
-        public double getTotalBillInMonth(DateTime dMonth)
+        public double getTotalBillInMonth(DateTime firstMonth)
         {
-            return DAL_HoaDon.Instance.getTotalBillInMonth_DAL(dMonth);
+            return DAL_HoaDon.Instance.getTotalBillInMonth_DAL(firstMonth);
         }
     }
 }

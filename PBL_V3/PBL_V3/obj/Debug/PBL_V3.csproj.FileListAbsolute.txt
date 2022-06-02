@@ -32,3 +32,4 @@ F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form._1.resources
 F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form.DetailTable.resources
 F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form.FormMenu.resources
 F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form.TableTach.resources
+F:\C#\PBL3_V3\PBL_V3\PBL_V3\obj\Debug\PBL_V3.View_Form.Form_HoSo.resources

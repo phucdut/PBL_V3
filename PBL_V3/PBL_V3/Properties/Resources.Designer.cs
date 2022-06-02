@@ -463,6 +463,16 @@ namespace PBL_V3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap profile_80px3 {
+            get {
+                object obj = ResourceManager.GetObject("profile_80px3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap proFile1 {
             get {
                 object obj = ResourceManager.GetObject("proFile1", resourceCulture);
@@ -596,6 +606,16 @@ namespace PBL_V3.Properties {
         internal static System.Drawing.Bitmap test_account_100px1 {
             get {
                 object obj = ResourceManager.GetObject("test_account_100px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap test_account_100px2 {
+            get {
+                object obj = ResourceManager.GetObject("test_account_100px2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

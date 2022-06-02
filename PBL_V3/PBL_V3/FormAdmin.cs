@@ -24,10 +24,10 @@ namespace PBL_V3
 
         private string Username;
 
-        public FormAdmin(string username)
+        public FormAdmin(string user)
         {
             InitializeComponent();
-            Username = username;
+            Username = user;
             SetGUI();
             random = new Random();
         }
