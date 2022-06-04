@@ -12,7 +12,7 @@ namespace PBL_V3.DAL
 {
     public class DAL_NhanVien : IGeneral<NHAN_VIEN>
     {
-        private PBL_SQL_V1Entities db;
+        private PBL_VS1Entities db;
         private static DAL_NhanVien _Instance;
         public static DAL_NhanVien Instance
         {
@@ -31,14 +31,14 @@ namespace PBL_V3.DAL
         }
         public DAL_NhanVien()
         {
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
         }
 
         public bool Add(NHAN_VIEN temp)
         {
             try
             {
-                using (var newStaff = new PBL_SQL_V1Entities())
+                using (var newStaff = new PBL_VS1Entities())
                 {
 
                     newStaff.Entry(temp).State = System.Data.Entity.EntityState.Added;
@@ -62,16 +62,16 @@ namespace PBL_V3.DAL
 
         public NHAN_VIEN Ma_Nhan_Vien_DAL(string id)
         {
-            using (var staff = new PBL_SQL_V1Entities())
+            using (var staff = new PBL_VS1Entities())
             {
                 return staff.NHAN_VIEN.Where(p => (p.Ma_Nhan_Vien) == id).FirstOrDefault();
             }
 
         }
-
+        
         public List<NHAN_VIEN> GetList()
         {
-            PBL_SQL_V1Entities db = new PBL_SQL_V1Entities();
+            PBL_VS1Entities db = new PBL_VS1Entities();
 
             List<NHAN_VIEN> list = db.NHAN_VIEN.ToList();
             List<NHAN_VIEN> listStaff = new List<NHAN_VIEN>();
@@ -110,7 +110,7 @@ namespace PBL_V3.DAL
         {
             try
             {
-                using (PBL_SQL_V1Entities db = new PBL_SQL_V1Entities())  //var newStaff = new PBL3_QLTraSuaEntities()
+                using (PBL_VS1Entities db = new PBL_VS1Entities())  //var newStaff = new PBL3_QLTraSuaEntities()
                 {
                     NHAN_VIEN before = db.NHAN_VIEN.First(p => p.Ma_Nhan_Vien == after.Ma_Nhan_Vien);
 

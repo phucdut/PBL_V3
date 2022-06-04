@@ -15,9 +15,9 @@ namespace PBL_V3
     public partial class CHI_TIET_HD_BAN_HANG
     {
         public int Ma_CTHD { get; set; }
-        public int Ma_Hoa_Don { get; set; }
-        public int Ma_Hang_Hoa { get; set; }
-        public int So_Luong { get; set; }
+        public Nullable<int> Ma_Hoa_Don { get; set; }
+        public Nullable<int> Ma_Hang_Hoa { get; set; }
+        public Nullable<int> So_Luong { get; set; }
     
         public virtual HANG_HOA HANG_HOA { get; set; }
         public virtual HOA_DON_BAN_HANG HOA_DON_BAN_HANG { get; set; }

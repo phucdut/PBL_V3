@@ -9,7 +9,7 @@ namespace PBL_V3.DAL
 {
     internal class DAL_CT_HangHoa : IGeneral<LOAI_HANG_HOA>
     {
-        private PBL_SQL_V1Entities db;
+        private PBL_VS1Entities db;
         private static DAL_CT_HangHoa _Instance;
         public static DAL_CT_HangHoa Instance
         {
@@ -28,7 +28,7 @@ namespace PBL_V3.DAL
         }
         public DAL_CT_HangHoa()
         {
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
         }
         public void Add(LOAI_HANG_HOA temp)
         {

@@ -25,7 +25,7 @@ namespace PBL_V3.BLL
 
             }
         }
-
+        
         public List<NHAN_VIEN> getStaff()
         {
             return DAL.DAL_NhanVien.Instance.GetList();

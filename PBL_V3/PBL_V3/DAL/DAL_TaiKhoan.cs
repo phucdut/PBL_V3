@@ -9,7 +9,7 @@ namespace PBL_V3.DAL
 {
     public class DAL_TaiKhoan
     {
-        private PBL_SQL_V1Entities db;
+        private PBL_VS1Entities db;
         private static DAL_TaiKhoan _Instance;
         public static DAL_TaiKhoan Instance
         {
@@ -28,7 +28,7 @@ namespace PBL_V3.DAL
         }
         public DAL_TaiKhoan()
         {
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
         }
 
         public bool DAL_DangNhap(string username, string password)
@@ -41,7 +41,7 @@ namespace PBL_V3.DAL
         public bool ResetPassword_DAL(string username, string newpassword)
         {
 
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
             var s = db.NHAN_VIEN.Where(p => p.Ma_Nhan_Vien == username).FirstOrDefault();
             s.Mat_Khau = newpassword;
             try
@@ -63,7 +63,7 @@ namespace PBL_V3.DAL
         }
         public bool ChangeAccount(string username, NHAN_VIEN after)    //NHAN_VIEN before
         {
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
             var s = db.NHAN_VIEN.Where(p => p.Ma_Nhan_Vien == username).FirstOrDefault();
             s.Ma_Nhan_Vien = after.Ma_Nhan_Vien;
             s.Mat_Khau = after.Mat_Khau;

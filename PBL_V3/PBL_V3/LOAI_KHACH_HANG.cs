@@ -22,7 +22,7 @@ namespace PBL_V3
     
         public int Ma_Loai_Khach_Hang { get; set; }
         public string Ten_Loai_Khach_Hang { get; set; }
-        public int Giam_gia { get; set; }
+        public Nullable<decimal> Giam_gia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KHACH_HANG> KHACH_HANG { get; set; }

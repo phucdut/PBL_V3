@@ -35,14 +35,14 @@ namespace PBL_V3.View_Form
             HOA_DON_BAN_HANG hd = BLL_HoaDon.Instance.getHOADONbyID(ID_BAN);
 
             txbID.Text = ID_BAN.ToString();
-            txbBan.Text = BLL_Ban.Instance.GetnameTable(hd.Ma_Ban);
+            txbBan.Text = BLL_Ban.Instance.GetnameTable(hd.Ma_Ban.Value);
             NHAN_VIEN nv = BLL_NhanVien.Instance.Staff_ID_BLL(hd.Ma_Nhan_Vien);
             txbNV.Text = nv.SDT;
             txbthoigian.Text = DateTime.Now.ToString();
             txbKH.Text = info;
 
             CultureInfo culture = new CultureInfo("vi-VN");
-            List<BILLinfo> listbillinfo = BLL_BILLinfo.Instance.GetList(BLL_Ban.Instance.gettable(hd.Ma_Ban));
+            List<BILLinfo> listbillinfo = BLL_BILLinfo.Instance.GetList(BLL_Ban.Instance.gettable(hd.Ma_Ban.Value));
             double tongcong = 0;
 
             foreach (BILLinfo item in listbillinfo)
@@ -68,7 +68,11 @@ namespace PBL_V3.View_Form
                 KHACH_HANG kh = BLL_KhachHang.Instance.GetKHByInfo(info);
                 if (kh != null)
                 {
-                    if (kh.Ma_Loai_Khach_Hang == 1 && kh.Diem_Tich_Luy > 20)
+                    if (kh.Ma_Loai_Khach_Hang == 0 && kh.Diem_Tich_Luy < 100)
+                    {
+                        txbchietkhau.Text = ((tongcong * 0) / 100).ToString();
+                    }
+                    if (kh.Ma_Loai_Khach_Hang == 1 && kh.Diem_Tich_Luy > 100)
                     {
                         txbchietkhau.Text = ((tongcong * 5) / 100).ToString();
                     }

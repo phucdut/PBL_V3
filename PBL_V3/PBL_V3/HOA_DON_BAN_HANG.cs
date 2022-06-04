@@ -22,12 +22,13 @@ namespace PBL_V3
     
         public int Ma_Hoa_Don { get; set; }
         public string Ma_Nhan_Vien { get; set; }
-        public int Ma_Ban { get; set; }
+        public Nullable<int> Ma_Ban { get; set; }
         public Nullable<int> Ma_Khach_Hang { get; set; }
-        public System.DateTime Date_HDBH { get; set; }
-        public int Tong_Tien { get; set; }
-        public Nullable<int> Diem_Tich_Luy { get; set; }
-        public Nullable<int> Giam_Gia { get; set; }
+        public Nullable<System.DateTime> Gio_den { get; set; }
+        public Nullable<System.DateTime> Gio_di { get; set; }
+        public Nullable<decimal> Tong_Tien { get; set; }
+        public Nullable<decimal> Diem_Tich_Luy { get; set; }
+        public Nullable<decimal> Giam_Gia { get; set; }
     
         public virtual BAN BAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

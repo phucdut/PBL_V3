@@ -14,25 +14,56 @@ using System.Windows.Forms;
 
 namespace PBL_V3.View_Form
 {
-    public partial class AddHangHoa : Form
+    public partial class Edit_HangHoa : Form
     {
         private String hh;
         public delegate void MyDel(int idLHH);
         private MyDel d;
 
         public MyDel D { get => d; set => d = value; }
-        public AddHangHoa(String Ten_HH)
+        public Edit_HangHoa(String Ten_HH)
         {
             InitializeComponent();
             hh = Ten_HH;
             LoadCBB();
         }
-
-        private void butExit_Click(object sender, EventArgs e)
+        public void LoadCBB()
         {
-            this.Close();
+            cbbLHH.Items.AddRange(BLL_CT_HangHoa.Instance.GetCBB().ToArray());
+            int index = 0;
+            if (hh != "")
+            {
+                HANG_HOA hanghoa = BLL_HangHoa.Instance.GetHHByName(hh);
+                for (int i = 1; i < cbbLHH.Items.Count; i++)
+                {
+                    if (((CBBItem)cbbLHH.Items[i]).Value == hanghoa.Ma_Loai_Hang_Hoa)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+                txtTenHangHoa.Text = hh;
+                txtGiaHangHoa.Text = hanghoa.Gia_Hang_Hoa.ToString();
+
+                MemoryStream stream = new MemoryStream(hanghoa.Hinh_Anh.ToArray());
+                Image image = Image.FromStream(stream);
+                ptrGoods.Image = image;
+            }
+
+            cbbLHH.SelectedIndex = index;
+
+
         }
 
+        private void btnPic_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            String file = openFileDialog1.FileName;
+            if (string.IsNullOrEmpty(file)) return;
+
+            Image myImage = Image.FromFile(file);
+            ptrGoods.Image = myImage;
+        }
         private void butSave_Click(object sender, EventArgs e)
         {
             try
@@ -44,7 +75,7 @@ namespace PBL_V3.View_Form
                     HANG_HOA merchandise = new HANG_HOA
                     {
                         Ma_Loai_Hang_Hoa = (int)((CBBItem)cbbLHH.SelectedItem).Value,
-                        //Ma_Hang_Hoa = int.Parse(txtmhh.Text),
+                       // Ma_Hang_Hoa = int.Parse(txtmhh.Text),
                         Ten_Hang_Hoa = txtTenHangHoa.Text,
                         Hinh_Anh = stream.ToArray(),
                         Gia_Hang_Hoa = Convert.ToDecimal(txtGiaHangHoa.Text),
@@ -83,42 +114,10 @@ namespace PBL_V3.View_Form
                 MessageBox.Show("Thao tác thất bại");
             }
         }
-        public void LoadCBB()
+
+        private void butExit_Click(object sender, EventArgs e)
         {
-            cbbLHH.Items.AddRange(BLL_CT_HangHoa.Instance.GetCBB().ToArray());
-            int index = 0;
-            if (hh != "")
-            {
-                HANG_HOA hanghoa = BLL_HangHoa.Instance.GetHHByName(hh);
-                for (int i = 1; i < cbbLHH.Items.Count; i++)
-                {
-                    if (((CBBItem)cbbLHH.Items[i]).Value == hanghoa.Ma_Loai_Hang_Hoa)
-                    {
-                        index = i;
-                        break;
-                    }
-                }
-                txtTenHangHoa.Text = hh;
-                txtGiaHangHoa.Text = hanghoa.Gia_Hang_Hoa.ToString();
-
-                MemoryStream stream = new MemoryStream(hanghoa.Hinh_Anh.ToArray());
-                Image image = Image.FromStream(stream);
-                ptrGoods.Image = image;
-            }
-
-            cbbLHH.SelectedIndex = index;
-
-
-        }
-
-        private void btnPic_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-            String file = openFileDialog1.FileName;
-            if (string.IsNullOrEmpty(file)) return;
-
-            Image myImage = Image.FromFile(file);
-            ptrGoods.Image = myImage;
+            this.Close();
         }
     }
 }

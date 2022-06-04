@@ -95,8 +95,8 @@ namespace PBL_V3.View_Form
         private void butEdit_Click(object sender, EventArgs e)
         {
             String Ten_HH = dtgvHH.SelectedRows[0].Cells[1].Value.ToString();
-            AddHangHoa f = new AddHangHoa(Ten_HH);
-            f.D += new AddHangHoa.MyDel(Load_DL);
+            Edit_HangHoa f = new Edit_HangHoa(Ten_HH);
+            f.D += new Edit_HangHoa.MyDel(Load_DL);
             f.Show();
         }
 
@@ -125,12 +125,6 @@ namespace PBL_V3.View_Form
             }
         }
 
-        
-
-        private void butTimKiem_Click(object sender, EventArgs e)
-        {
-            string s = txtTimKiem.Text.ToString();
-            dtgvHH.DataSource = BLL_HangHoa.Instance.GetHHByName(s);
-        }
+       
     }
 }

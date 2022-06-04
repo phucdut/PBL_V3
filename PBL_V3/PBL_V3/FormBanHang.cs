@@ -192,7 +192,7 @@ namespace PBL_V3
 
                 lsvItem.SubItems.Add(nmrsoLuong.Value.ToString());
                 lsvItem.SubItems.Add(hangHoa.Gia_Hang_Hoa.ToString());
-                lsvItem.SubItems.Add((Convert.ToInt32(hangHoa.Gia_Hang_Hoa.ToString()) * (int)nmrsoLuong.Value).ToString());
+                lsvItem.SubItems.Add((Convert.ToDouble(hangHoa.Gia_Hang_Hoa.Value.ToString()) * (int)nmrsoLuong.Value).ToString());
                 lsvItem.Tag = hangHoa;
                 BLL_CT_HoaDon.Instance.insert(idBill, hangHoa.Ten_Hang_Hoa, (int)nmrsoLuong.Value);
 

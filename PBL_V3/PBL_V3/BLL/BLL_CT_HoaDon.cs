@@ -39,6 +39,7 @@ namespace PBL_V3.BLL
             int idHH = DAL_HangHoa.Instance.GetIDByName(tenHH);
             CHI_TIET_HD_BAN_HANG chitietHD = new CHI_TIET_HD_BAN_HANG
             {
+                
                 Ma_Hoa_Don = idBill,
                 Ma_Hang_Hoa = idHH,
                 So_Luong = soLuong

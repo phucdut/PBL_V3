@@ -1,6 +1,6 @@
 ﻿namespace PBL_V3.View_Form
 {
-    partial class AddHangHoa
+    partial class Edit_HangHoa
     {
         /// <summary>
         /// Required designer variable.
@@ -66,10 +66,10 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(1, 4);
+            this.groupBox1.Location = new System.Drawing.Point(2, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1100, 388);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(912, 345);
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hàng hóa";
             // 
@@ -190,15 +190,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên hàng hóa:";
             // 
-            // AddHangHoa
+            // Edit_HangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 396);
+            this.ClientSize = new System.Drawing.Size(908, 345);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddHangHoa";
-            this.Text = "AddHangHoa";
+            this.Name = "Edit_HangHoa";
+            this.Text = "Edit_HangHoa";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrGoods)).EndInit();
@@ -209,17 +208,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnPic;
+        private System.Windows.Forms.PictureBox ptrGoods;
+        private System.Windows.Forms.Button butExit;
+        private System.Windows.Forms.Button butSave;
+        private System.Windows.Forms.ComboBox cbbLHH;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtGiaHangHoa;
         private System.Windows.Forms.TextBox txtTenHangHoa;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbbLHH;
-        private System.Windows.Forms.Button butExit;
-        private System.Windows.Forms.Button butSave;
-        private System.Windows.Forms.Button btnPic;
-        private System.Windows.Forms.PictureBox ptrGoods;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

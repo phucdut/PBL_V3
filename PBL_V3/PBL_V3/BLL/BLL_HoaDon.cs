@@ -38,11 +38,12 @@ namespace PBL_V3.BLL
         {
             HOA_DON_BAN_HANG hoadon = new HOA_DON_BAN_HANG
             {
+
                 Ma_Ban = idBAN,
                 Ma_Khach_Hang = idKH,
                 Ma_Nhan_Vien = idNV,
-                Date_HDBH = DateTime.Now,
-                //Date_HDBH = null,
+                Gio_den = DateTime.Now,
+                Gio_di = null,
                 Tong_Tien = 0,
                 Giam_Gia = 0,
                 //  Diem_TL = 0
@@ -71,7 +72,7 @@ namespace PBL_V3.BLL
             DAL_HoaDon.Instance.Sync();
         }
 
-        public void Thanhtoan(int idbill, int tongtien, int? IDKH, int discount)
+        public void Thanhtoan(int idbill, decimal tongtien, int? IDKH, decimal discount)
         {
             if (IDKH == null)
             {
@@ -85,9 +86,9 @@ namespace PBL_V3.BLL
             DAL_HoaDon.Instance.Sync();
         }
 
-        public List<HOA_DON_BAN_HANG> GetListHOADONByDate(DateTime checkIn)
+        public List<HOA_DON_BAN_HANG> GetListHOADONByDate(DateTime checkIn, DateTime checkOut)
         {
-            return DAL_HoaDon.Instance.GetListByDate(checkIn);
+            return DAL_HoaDon.Instance.GetListByDate(checkIn, checkOut);
         }
 
         public int getIDByKH(KHACH_HANG kh)
@@ -107,9 +108,9 @@ namespace PBL_V3.BLL
             DAL_HoaDon.Instance.Sync();
         }
 
-        public double getTotalBillInMonth(DateTime firstMonth)
+        public double getTotalBillInMonth(DateTime firstMonth, DateTime endMonth)
         {
-            return DAL_HoaDon.Instance.getTotalBillInMonth_DAL(firstMonth);
+            return DAL_HoaDon.Instance.getTotalBillInMonth_DAL(firstMonth, endMonth);
         }
     }
 }

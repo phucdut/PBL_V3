@@ -28,6 +28,7 @@ namespace PBL_V3.View_Form
             // dtgvNV.DataSource = BLLNhanVien.Instance.getStaff();
             setCBB();
         }
+        
         public void LoadStaff(int m, int n)
         {
             dtgvNV.Rows.Clear();

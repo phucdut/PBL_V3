@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2fa9bb4e9e1047e4849c74453713e121" Name="Diagram1">
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.BAN" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.CHI_TIET_HD_BAN_HANG" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.HANG_HOA" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.HOA_DON_BAN_HANG" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.KHACH_HANG" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.KHU_VUC" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.LOAI_HANG_HOA" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.LOAI_KHACH_HANG" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PBL_SQL_V1Model.NHAN_VIEN" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <AssociationConnector Association="PBL_SQL_V1Model.fk_hdbh_Ma_Ban" ManuallyRouted="false" />
-        <AssociationConnector Association="PBL_SQL_V1Model.fk_htk_Ma_Khu_Vuc" ManuallyRouted="false" />
-        <AssociationConnector Association="PBL_SQL_V1Model.fk_hdbh_Ma_Hang_Hoa" ManuallyRouted="false" />
-        <AssociationConnector Association="PBL_SQL_V1Model.fk_hdbh_Ma_Ma_Hoa_Don" ManuallyRouted="false" />
-        <AssociationConnector Association="PBL_SQL_V1Model.fk_htk_Ma_Loai_Hang_Hoa" ManuallyRouted="false" />
-        <AssociationConnector Association="PBL_SQL_V1Model.fk_hdbh_Ma_Khach_Hang" ManuallyRouted="false" />
-        <AssociationConnector Association="PBL_SQL_V1Model.fk_hdbh_Ma_Nhan_Vien" ManuallyRouted="false" />
-        <AssociationConnector Association="PBL_SQL_V1Model.fk_htk_Ma_Loai_Khach_Hang" ManuallyRouted="false" />
+      <Diagram DiagramId="2d1066165ba442aaab9e4cf871f0b4e4" Name="Diagram1">
+        <EntityTypeShape EntityType="PBL_VS1Model.BAN" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL_VS1Model.CHI_TIET_HD_BAN_HANG" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL_VS1Model.HANG_HOA" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL_VS1Model.HOA_DON_BAN_HANG" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL_VS1Model.KHACH_HANG" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL_VS1Model.KHU_VUC" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL_VS1Model.LOAI_HANG_HOA" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL_VS1Model.LOAI_KHACH_HANG" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL_VS1Model.NHAN_VIEN" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <AssociationConnector Association="PBL_VS1Model.fk_hdbh_Ma_Ban" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL_VS1Model.fk_htk_Ma_Khu_Vuc" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL_VS1Model.fk_hdbh_Ma_Hang_Hoa" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL_VS1Model.fk_hdbh_Ma_Ma_Hoa_Don" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL_VS1Model.fk_htk_Ma_Loai_Hang_Hoa" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL_VS1Model.fk_hdbh_Ma_Khach_Hang" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL_VS1Model.fk_hdbh_Ma_Nhan_Vien" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL_VS1Model.fk_htk_Ma_Loai_Khach_Hang" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

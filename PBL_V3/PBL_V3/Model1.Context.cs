@@ -13,10 +13,10 @@ namespace PBL_V3
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PBL_SQL_V1Entities : DbContext
+    public partial class PBL_VS1Entities : DbContext
     {
-        public PBL_SQL_V1Entities()
-            : base("name=PBL_SQL_V1Entities")
+        public PBL_VS1Entities()
+            : base("name=PBL_VS1Entities")
         {
         }
     

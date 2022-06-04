@@ -9,7 +9,7 @@ namespace PBL_V3.DAL
 {
     class DAL_CT_HoaDon : IGeneral<CHI_TIET_HD_BAN_HANG>
     {
-        private PBL_SQL_V1Entities db;
+        private PBL_VS1Entities db;
         private static DAL_CT_HoaDon _Instance;
         public static DAL_CT_HoaDon Instance
         {
@@ -28,7 +28,7 @@ namespace PBL_V3.DAL
         }
         public DAL_CT_HoaDon()
         {
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
         }
 
         public List<CHI_TIET_HD_BAN_HANG> GetList()

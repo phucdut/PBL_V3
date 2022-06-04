@@ -9,7 +9,7 @@ namespace PBL_V3.DAL
 {
     class DAL_HoaDon : IGeneral<HOA_DON_BAN_HANG>
     {
-        private PBL_SQL_V1Entities db;
+        private PBL_VS1Entities db;
         private static DAL_HoaDon _Instance;
         public static DAL_HoaDon Instance
         {
@@ -30,7 +30,7 @@ namespace PBL_V3.DAL
         }
         public DAL_HoaDon()
         {
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
         }
 
 
@@ -42,11 +42,11 @@ namespace PBL_V3.DAL
 
 
 
-        public List<HOA_DON_BAN_HANG> GetListByDate(DateTime checkIn)
+        public List<HOA_DON_BAN_HANG> GetListByDate(DateTime checkIn, DateTime checkOut)
         {
             List<HOA_DON_BAN_HANG> list = (from hoadon in db.HOA_DON_BAN_HANG
-                                  where hoadon.Date_HDBH >= checkIn 
-                                  select hoadon).ToList();
+                                           where hoadon.Gio_den >= checkIn && hoadon.Gio_di <= checkOut
+                                           select hoadon).ToList();
 
 
 
@@ -61,8 +61,8 @@ namespace PBL_V3.DAL
         public List<HOA_DON_BAN_HANG> GetList(int key)
         {
             List<HOA_DON_BAN_HANG> list = (from hoadon in db.HOA_DON_BAN_HANG
-                                  where hoadon.Ma_Ban == key && hoadon.Date_HDBH == null
-                                  select hoadon).ToList();
+                                           where hoadon.Ma_Ban == key && hoadon.Gio_di == null
+                                           select hoadon).ToList();
 
             return list;
         }
@@ -108,10 +108,10 @@ namespace PBL_V3.DAL
 
 
 
-        public void Thanhtoan(int idbill, int tongtien, int? IDKH, int discount)
+        public void Thanhtoan(int idbill, decimal tongtien, int? IDKH, decimal discount)
         {
             HOA_DON_BAN_HANG tempt = db.HOA_DON_BAN_HANG.FirstOrDefault(p => p.Ma_Hoa_Don == idbill);
-            tempt.Date_HDBH = DateTime.Now;
+            tempt.Gio_di = DateTime.Now;
             tempt.Tong_Tien = tongtien;
             tempt.Ma_Khach_Hang = IDKH;
             tempt.Giam_Gia = discount;
@@ -166,10 +166,11 @@ namespace PBL_V3.DAL
 
 
 
-        public double getTotalBillInMonth_DAL(DateTime dMonth)
+        public double getTotalBillInMonth_DAL(DateTime firstMonth, DateTime endMonth)
         {
             var list = from p in db.HOA_DON_BAN_HANG
-                       where p.Date_HDBH >= dMonth
+                       where p.Gio_den >= firstMonth
+                       && p.Gio_di <= endMonth
                        select p.Tong_Tien;
             var sum = list.ToList().Sum();
 

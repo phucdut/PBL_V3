@@ -21,11 +21,11 @@ namespace PBL_V3
         }
     
         public int Ma_Khach_Hang { get; set; }
-        public int Ma_Loai_Khach_Hang { get; set; }
+        public Nullable<int> Ma_Loai_Khach_Hang { get; set; }
         public string Ten_Khach_Hang { get; set; }
         public string Dia_Chi { get; set; }
         public string SDT { get; set; }
-        public int Diem_Tich_Luy { get; set; }
+        public Nullable<decimal> Diem_Tich_Luy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOA_DON_BAN_HANG> HOA_DON_BAN_HANG { get; set; }

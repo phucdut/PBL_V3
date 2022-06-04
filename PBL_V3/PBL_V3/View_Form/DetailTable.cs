@@ -30,7 +30,7 @@ namespace PBL_V3.View_Form
             HOA_DON_BAN_HANG hd = BLL_HoaDon.Instance.getHOADONbyID(ID_HD);
 
             CultureInfo culture = new CultureInfo("vi-VN");
-            List<BILLinfo> listbillinfo = BLL_BILLinfo.Instance.GetList(BLL_Ban.Instance.gettable(hd.Ma_Ban));
+            List<BILLinfo> listbillinfo = BLL_BILLinfo.Instance.GetList(BLL_Ban.Instance.gettable(hd.Ma_Ban.Value));
             foreach (BILLinfo item in listbillinfo)
             {
 

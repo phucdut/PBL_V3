@@ -9,7 +9,7 @@ namespace PBL_V3.DAL
 {
     class DAL_KhachHang : IGeneral<KHACH_HANG>
     {
-        private PBL_SQL_V1Entities db;
+        private PBL_VS1Entities db;
         private static DAL_KhachHang _Instance;
         public static DAL_KhachHang Instance
         {
@@ -28,7 +28,7 @@ namespace PBL_V3.DAL
         }
         public DAL_KhachHang()
         {
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
         }
 
         public List<KHACH_HANG> GetList()
@@ -71,13 +71,15 @@ namespace PBL_V3.DAL
         {
             KHACH_HANG kh = db.KHACH_HANG.First(p => p.Ma_Khach_Hang == khachhang.Ma_Khach_Hang);
             kh.Diem_Tich_Luy += dtl;
-
-            if (kh.Diem_Tich_Luy > 100)
+            if (kh.Diem_Tich_Luy < 100)
             {
                 kh.Ma_Loai_Khach_Hang = 1;
-            } else if(kh.Diem_Tich_Luy > 300)
+            }else if (kh.Diem_Tich_Luy > 100 && kh.Diem_Tich_Luy <300)
             {
                 kh.Ma_Loai_Khach_Hang = 2;
+            } else if(kh.Diem_Tich_Luy > 300)
+            {
+                kh.Ma_Loai_Khach_Hang = 3;
             }    
 
         }

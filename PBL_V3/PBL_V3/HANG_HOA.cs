@@ -22,9 +22,10 @@ namespace PBL_V3
     
         public int Ma_Hang_Hoa { get; set; }
         public string Ten_Hang_Hoa { get; set; }
-        public int Ma_Loai_Hang_Hoa { get; set; }
-        public int Gia_Hang_Hoa { get; set; }
-        public int Tinh_Trang { get; set; }
+        public Nullable<int> Ma_Loai_Hang_Hoa { get; set; }
+        public byte[] Hinh_Anh { get; set; }
+        public Nullable<decimal> Gia_Hang_Hoa { get; set; }
+        public Nullable<int> Tinh_Trang { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHI_TIET_HD_BAN_HANG> CHI_TIET_HD_BAN_HANG { get; set; }

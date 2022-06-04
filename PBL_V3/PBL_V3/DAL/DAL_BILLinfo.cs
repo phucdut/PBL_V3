@@ -9,7 +9,7 @@ namespace PBL_V3.DAL
 {
     class DAL_BILLinfo
     {
-        private PBL_SQL_V1Entities db;
+        private PBL_VS1Entities db;
         private static DAL_BILLinfo _Instance;
         public static DAL_BILLinfo Instance
         {
@@ -28,7 +28,7 @@ namespace PBL_V3.DAL
         }
         public DAL_BILLinfo()
         {
-            db = new PBL_SQL_V1Entities();
+            db = new PBL_VS1Entities();
         }
 
         public List<BILLinfo> GetBillInfo(BAN table)
@@ -39,7 +39,7 @@ namespace PBL_V3.DAL
                        where hanghoa.Ma_Hang_Hoa == hoadonChitiet.Ma_Hang_Hoa
                        where hoadon.Ma_Hoa_Don == hoadonChitiet.Ma_Hoa_Don
                        where hoadon.Ma_Ban == table.Ma_Ban
-                       where hoadon.Date_HDBH == null
+                       where hoadon.Gio_di == null
                        let tongTien = hoadonChitiet.So_Luong * (double)hanghoa.Gia_Hang_Hoa
                        select new { hanghoa.Ten_Hang_Hoa, hoadonChitiet.So_Luong, hanghoa.Gia_Hang_Hoa, tongTien };
 
